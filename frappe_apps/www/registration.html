@@ -1,0 +1,123 @@
+{% extends "frappe/templates/base.html" %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="page-header">
+        <h2>Employee Registration</h2>
+    </div>
+    <hr>
+    <br>
+    <form id="registration-form" method="post">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">First Name *</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="firs_tname" name="first_name"
+                        title="First Name is required" aria-required="true" required="">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Last Name *</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="last_name" name="last_name"
+                        aria-required="true" required="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Email *</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="email" name="email" aria-required="true"
+                        required="">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Phone</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" id="phone" name="phone">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Date Of Birth *</label>
+                </div>
+                <div class="form-group">
+                    <input type="date" autocomplete="off" class="form-control input-sm" id="date_of_birth"
+                        name="date_of_birth" aria-required="true" required="">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Date of Joining *</label>
+                </div>
+                <div class="form-group">
+                    <input type="date" autocomplete="off" class="form-control input-sm" id="date_of_joining"
+                        name="date_of_joining" aria-required="true" required="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Gender *</label>
+                </div>
+                <div class="form-group">
+                    <select class="form-control input-sm" id="gender" name="gender" aria-required="true" required="">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Non-confirming">Non-Conforming</option>
+                        <option value="Other">Other</option>
+                        <option value="Genderqueer">Genderqueer</option>
+                        <option value="Transgender">Transgender</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Password *</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control input-sm" id="password" name="password"
+                        aria-required="true" required="">
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="clearfix">
+                    <label class="control-label" style="padding-right: 0px;">Confirm Password *</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control input-sm" id="confirmpassword" name="confirmpassword"
+                        aria-required="true" required="">
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-dark btn-block">Submit</button>
+    </form>
+    <script>
+        {% include "frappe_apps/www/registration.js" %}
+    </script>
+    {% endblock %}
